@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class= "container">
+            <h1>입력한 텍스트는 단어로 <span id= word>{{words}}</span> 단어로 구성되어 있습니다.</h1>
+            <a href="{% url 'home' %}">HOME</a>
+            <h1>입력한 텍스트: </h1>
+            <!-- 입력한 총 텍스트 -->
+            {{inputtext}}
+
+            <h1>단어 카운트:</h1>
+            <!-- 단어: 개수 -->
+            {% for word, cnt in dictionary %}
+
+            {{word}} : {{cnt}} <br>
+
+            {% endfor %}
+        </div>        
+    </body>
+</html>
+<style>
+    #word{
+        color: blue;
+    }
+</style>
